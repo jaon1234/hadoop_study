@@ -35,5 +35,17 @@
     <value>/opt/modules/hadoop-3.2.4/data</value>
     <description>A base for other temporary directories.</description>
   </property>
+
+  <!-- Static Web User Filter properties. -->
+  <!-- 配置访问网页的用户，当指定为hadoop集群的管理者时，有操作文件的权利 -->
+  <property>
+    <name>hadoop.http.staticuser.user</name>
+    <value>hadoop</value>
+    <description>
+      The user name to filter as, on static web filters
+      while rendering content. An example use is the HDFS
+      web UI (user to be used for browsing files).
+    </description>
+  </property>
   
 </configuration>
