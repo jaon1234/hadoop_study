@@ -14,8 +14,8 @@
 -->
 <configuration>
 
-<!-- Site specific YARN configuration properties -->
-    <!-- MR走的协议-->
+    <!-- Site specific YARN configuration properties -->
+    <!-- MR 走的协议-->
     <property>
         <description>A comma separated list of services where service name should only
             contain a-zA-Z0-9_ and can not start with numbers</description>
@@ -62,5 +62,21 @@
         Be careful set this too small and you will spam the name node.</description>
         <name>yarn.log-aggregation.retain-seconds</name>
         <value>604800</value>
+    </property>
+
+    <!-- 关闭物理内存检查，为spark配置的 -->
+    <property>
+        <description>Whether physical memory limits will be enforced for
+        containers.</description>
+        <name>yarn.nodemanager.pmem-check-enabled</name>
+        <value>false</value>
+    </property>
+    
+    <!-- 关闭虚拟内存检查，为spark准备的 -->
+    <property>
+        <description>Whether virtual memory limits will be enforced for
+        containers.</description>
+        <name>yarn.nodemanager.vmem-check-enabled</name>
+        <value>false</value>
     </property>
 </configuration>                   

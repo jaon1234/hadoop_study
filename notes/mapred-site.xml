@@ -30,7 +30,7 @@
     <!-- hadoop内部通讯地址 -->
     <property>
       <name>mapreduce.jobhistory.address</name>
-      <!-- 放yarn的地址 -->
+      <!-- 日志服务器内部地址 -->
       <value>hadoop100:10020</value>
       <description>MapReduce JobHistory Server IPC host:port</description>
     </property>
