@@ -71,9 +71,15 @@
 # You might get better performance to enable these options if using native BLAS (see SPARK-21305).
 # - MKL_NUM_THREADS=1        Disable multi-threading of Intel MKL
 # - OPENBLAS_NUM_THREADS=1   Disable multi-threading of OpenBLAS
+# spark运行的java环境
 export JAVA_HOME=/opt/modules/jdk1.8.0_361
-SPARK_MASTER_HOST=hadoop100
-SPARK_MASTER_PORT=7077
+# pyspark最好还配置一下python环境
+export PYSPARK_PYTHON=/home/hadoop/miniconda3/bin/python3
+# 下面两项在配置standalone集群模式的时候需要开启
+# SPARK_MASTER_HOST=hadoop100
+# SPARK_MASTER_PORT=7077
+# 下面一项是在配置yarn集群模式的时候开启
+YARN_CONF_DIR=/opt/modules/hadoop-3.2.4/etc/hadoop/
 
 ## spark日志文件配置
 export SPARK_HISTORY_OPTS="

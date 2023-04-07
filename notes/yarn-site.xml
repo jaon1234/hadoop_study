@@ -53,7 +53,7 @@
             URL for log aggregation server
         </description>
         <name>yarn.log.server.url</name>
-        <!-- 这个地址同mapred-site.xml当中设置的历史服务器地址 -->
+        <!-- 这个地址同mapred-site.xml当中设置的历史服务器地址,yarn会提供入口跳转 -->
         <value>http://hadoop100:19888/jobhistory/logs</value>
     </property>
     <!-- 设置log的保存时间 -->
