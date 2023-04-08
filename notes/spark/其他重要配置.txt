@@ -1,0 +1,7 @@
+1、PYTHONPATH中添加对应的spark提供的python环境变量，特别是py4j
+   PYTHONPATH=%SPARK_HOME%\python;%SPARK_HOME%\python\lib\py4j-0.10.9.5-src.zip;%PYTHONPATH%
+2、PYSPARK_PYTHON指定python的interceptor，避免使用默认
+   PYSPARK_PYTHON=%MiniCondaEnv%\python3.exe
+3、java的classpath，需要给spark配置一下
+6、虚拟机配置standalone集群模式的时候，win主机一定要设置spark.driver.host属性，
+   且就是当前主机的ip，否则集群中的excutor无法找到driver（因为这个时候driver就是在客户端上面）
