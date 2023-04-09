@@ -5,13 +5,13 @@
     <!-- jdbc连接的URL -->
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:mysql://hadoop100:3306/metastore?useSSL=false</value>
+        <value>jdbc:mysql://hadoop100:3306/metastore</value>
     </property>
     
     <!-- jdbc连接的Driver-->
     <property>
         <name>javax.jdo.option.ConnectionDriverName</name>
-        <value>com.mysql.jdbc.Driver</value>
+        <value>com.mysql.cj.jdbc.Driver</value>
     </property>
     
 	<!-- jdbc连接的username-->
@@ -43,5 +43,24 @@
         <name>hive.server2.thrift.port</name>
         <value>10000</value>
     </property>
+
+    <!-- 指定metastore服务的地址 ，独立部署的模式下-->
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://hadoop100:9083</value>
+    </property>
+
+    <!-- hive cli显示当前库和表头 -->
+    <property>
+        <name>hive.cli.print.header</name>
+        <value>true</value>
+        <description>Whether to print the names of the columns in query output.</description>
+    </property>
+    <property>
+        <name>hive.cli.print.current.db</name>
+        <value>true</value>
+        <description>Whether to include the current database in the Hive prompt.</description>
+    </property>
+
 
 </configuration>
