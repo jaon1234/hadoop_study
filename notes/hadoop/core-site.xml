@@ -18,7 +18,7 @@
 
 <configuration>
   <!-- file properties -->
-  <!-- namenode and url for internal interaction-->
+  <!-- 配置HDFS的IPC调用端口及地址 -->
   <property>
     <name>fs.defaultFS</name>
     <value>hdfs://hadoop100:8020</value>
@@ -29,7 +29,7 @@
     determine the host, port, etc. for a filesystem.</description>
   </property>
 
-  <!-- data dir -->
+  <!-- 配置数据存储路径 -->
   <property>
     <name>hadoop.tmp.dir</name>
     <value>/opt/modules/hadoop-3.2.4/data</value>
@@ -47,5 +47,25 @@
       web UI (user to be used for browsing files).
     </description>
   </property>
+
+  <!-- 下面配置代理用户，用于hive -->
+  <!--配置所有节点的hadoop用户都可作为代理用户，这里声明它可以成为代理用户-->
+  <property>
+    <name>hadoop.proxyuser.hadoop.hosts</name>
+    <value>*</value>
+  </property>
+
+  <!--配置hadoop用户能够代理的用户组为任意组，这里声明它的组-->
+  <property>
+    <name>hadoop.proxyuser.hadoop.groups</name>
+    <value>*</value>
+  </property>
+
+  <!--配置hadoop用户能够代理的用户为任意用户，这里声明它能代理那些-->
+  <property>
+    <name>hadoop.proxyuser.hadoop.users</name>
+    <value>*</value>
+  </property>
+
   
 </configuration>
