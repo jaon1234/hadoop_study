@@ -1,0 +1,8 @@
+CREATE TABLE `productnotes_inno` (
+  `note_id` int NOT NULL AUTO_INCREMENT,
+  `prod_id` char(10) NOT NULL,
+  `note_date` datetime NOT NULL,
+  `note_text` text,
+  PRIMARY KEY (`note_id`),
+  FULLTEXT KEY `note_text` (`note_text`)
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ciinsert
