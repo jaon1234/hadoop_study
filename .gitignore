@@ -6,3 +6,4 @@ test/
 resources/
 result/
 .conda/
+test.*
