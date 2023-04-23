@@ -61,6 +61,11 @@
         <value>true</value>
         <description>Whether to include the current database in the Hive prompt.</description>
     </property>
-
+    <!-- hive学习的时候，自动开启本地模式 -->
+    <property>
+        <name>hive.exec.mode.local.auto</name>
+        <value>true</value>
+        <description>.</description>
+    </property>
 
 </configuration>
