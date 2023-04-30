@@ -15,3 +15,40 @@ rows between 3 preceding and 1 following # 从前面三行和下面一行，总�
 
 -- 当前数据的上方数据lag，当前数据的下方数据lead，参数分别是:列名，offset，超出记录窗口时的默认值
 
+-- 窗口函数学习
+create table transcripts(
+    id int primary key auto_increment,
+    name char(20),
+    scores float,
+    class char(30)
+)engine=InnoDB character set utf8 COLLATE utf8_general_ci;
+
+insert into transcripts(name,scores,class) values ("张三01",85.5,"大数据01");
+insert into transcripts(name,scores,class) values ("张三02",80.5,"大数据01");
+insert into transcripts(name,scores,class) values ("张三03",65.5,"大数据01");
+insert into transcripts(name,scores,class) values ("张三04",55.5,"大数据01");
+insert into transcripts(name,scores,class) values ("张三05",95.5,"大数据01");
+insert into transcripts(name,scores,class) values ("张三06",75.5,"大数据01");
+insert into transcripts(name,scores,class) values ("王二01",85.5,"计算机01");
+insert into transcripts(name,scores,class) values ("王二02",80.5,"计算机01");
+insert into transcripts(name,scores,class) values ("王二03",65.5,"计算机01");
+insert into transcripts(name,scores,class) values ("王二04",55.5,"计算机01");
+insert into transcripts(name,scores,class) values ("王二05",95.5,"计算机01");
+insert into transcripts(name,scores,class) values ("王二06",75.5,"计算机01");
+insert into transcripts(name,scores,class) values ("张三07",75.5,"大数据01");
+insert into transcripts(name,scores,class) values ("王二07",85.5,"计算机01");
+
+-- 
+rank() over(
+    partition by class,
+    order by scores
+) as "rank"
+
+select
+    *,
+    rank() over(
+    partition by class
+    order by scores
+) as "rank"
+from
+    transcripts;
